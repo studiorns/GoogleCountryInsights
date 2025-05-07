@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country-Specific Travel Insights 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* SONER Logo Animation */
+        @keyframes sonerScan { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes sonerBlip { 0%, 20%, 100% { opacity: 0; } 2%, 15% { opacity: 1; } 3% { transform: scale(1.2); } }
+        
+        /* SONER Logo styles */
+        .soner-logo { display: flex; align-items: center; color: white; font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 300; }
+        .soner-radar { width: 24px; height: 24px; border-radius: 50%; border: 1px solid white; margin: 0 3px; position: relative; background-color: rgba(255, 255, 255, 0.05); overflow: hidden; }
+        .soner-scanner { position: absolute; top: 0; left: 0; width: 100%; height: 100%; animation: sonerScan 4s linear infinite; transform-origin: center; }
+        .soner-scanner::before { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 50%; background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)); transform-origin: bottom left; clip-path: polygon(0 0, 100% 0, 0 100%); }
+        .soner-scanner::after { content: ''; position: absolute; top: 0; left: 50%; width: 50%; height: 1px; background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1)); transform-origin: left center; box-shadow: 0 0 4px rgba(255, 255, 255, 0.8); }
+        .soner-blip { position: absolute; width: 2px; height: 2px; background-color: white; border-radius: 50%; opacity: 0; box-shadow: 0 0 4px white; }
+        .soner-blip:nth-child(1) { top: 25%; left: 30%; animation: sonerBlip 4s 1s infinite; }
+        .soner-blip:nth-child(2) { top: 65%; left: 60%; animation: sonerBlip 4s 2.5s infinite; }
+        .soner-tagline { color: white; font-size: 8px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.5em; margin-left: 10px; opacity: 0.8; }
+
+        :root {
+            --primary: #4285f4;
+            --primary-light: #1a2233;
+            --primary-dark: #8ab4f8;
+            --secondary: #34a853;
+            --secondary-light: #1a2a1e;
+            --warning: #fbbc04;
+            --warning-light: #332a1a;
+            --danger: #ea4335;
+            --danger-light: #331f1e;
+            --gray-100: #1e1e1e;
+            --gray-200: #2d2d2d;
+            --gray-300: #3d3d3d;
+            --gray-400: #4d4d4d;
+            --gray-500: #777777;
+            --gray-600: #a0a0a0;
+            --gray-700: #c0c0c0;
+            --gray-800: #e0e0e0;
+            --gray-900: #f0f0f0;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            --shadow-md: 0 6px 12px rgba(0, 0, 0, 0.5);
+            --shadow-lg: 0 15px 25px rgba(0, 0, 0, 0.6);
+            --radius-sm: 4px;
+            --radius: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+            
+            /* Region-specific colors */
+            --europe-color: #4285f4;
+            --europe-light: #1a2233;
+            --na-color: #fbbc04;
+            --na-light: #332a1a;
+            --me-color: #34a853;
+            --me-light: #1a2a1e;
+            --apac-color: #ea4335;
+            --apac-light: #331f1e;
+            --latam-color: #9c27b0;
+            --latam-light: #2e1437;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background-color: var(--gray-100);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a73e8 0%, #174ea6 100%);
+            color: white;
+            padding: 32px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIxMDAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBzdG9wLW9wYWNpdHk9Ii4wNSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiNGRkYiIHN0b3Atb3BhY2l0eT0iLjAyIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cGF0aCBkPSJNMTQ0MCAyMDBjLTEzMS44LTEyLjktMjY3LjgtMTkuNC00MDgtMTkuNC0xNDAuMiAwLTI3Ni4yIDYuNS00MDggMTkuNFYwaDgxNnYyMDB6IiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--gray-800);
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.2rem 0 0.8rem;
+            color: var(--gray-800);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+        }
+        
+        .card {
+            background-color: var(--gray-200);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        
+        .section-intro {
+            background-color: var(--primary-light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .section-intro p {
+            margin-bottom: 0;
+        }
+        
+        .footer {
+            background-color: var(--gray-100);
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 1px solid var(--gray-300);
+        }
+        
+        .footer p {
+            color: var(--gray-700);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .performance-high {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .performance-medium {
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .performance-low {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        /* Region section styles */
+        .region-section {
+            margin-bottom: 40px;
+        }
+        
+        .region-section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .region-section-header h2 {
+            margin: 0;
+            border-bottom: none;
+        }
+        
+        .europe-section h2 {
+            color: var(--europe-color);
+        }
+        
+        .na-section h2 {
+            color: var(--na-color);
+        }
+        
+        .me-section h2 {
+            color: var(--me-color);
+        }
+        
+        .apac-section h2 {
+            color: var(--apac-color);
+        }
+        
+        .latam-section h2 {
+            color: var(--latam-color);
+        }
+        
+        /* Country card styles */
+        .country-card {
+            background-color: rgba(45, 45, 45, 0.5);
+            border-radius: var(--radius-sm);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--gray-500);
+        }
+        
+        .europe-section .country-card {
+            border-left-color: var(--europe-color);
+        }
+        
+        .na-section .country-card {
+            border-left-color: var(--na-color);
+        }
+        
+        .me-section .country-card {
+            border-left-color: var(--me-color);
+        }
+        
+        .apac-section .country-card {
+            border-left-color: var(--apac-color);
+        }
+        
+        .latam-section .country-card {
+            border-left-color: var(--latam-color);
+        }
+        
+        .country-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .europe-section .country-name {
+            color: var(--europe-color);
+        }
+        
+        .na-section .country-name {
+            color: var(--na-color);
+        }
+        
+        .me-section .country-name {
+            color: var(--me-color);
+        }
+        
+        .apac-section .country-name {
+            color: var(--apac-color);
+        }
+        
+        .latam-section .country-name {
+            color: var(--latam-color);
+        }
+        
+        .insight-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        
+        .insight-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .insight-list li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .insight-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--gray-600);
+        }
+        
+        .europe-section .insight-list li:before {
+            background-color: var(--europe-color);
+        }
+        
+        .na-section .insight-list li:before {
+            background-color: var(--na-color);
+        }
+        
+        .me-section .insight-list li:before {
+            background-color: var(--me-color);
+        }
+        
+        .apac-section .insight-list li:before {
+            background-color: var(--apac-color);
+        }
+        
+        .latam-section .insight-list li:before {
+            background-color: var(--latam-color);
+        }
+        
+        /* Source citation */
+        .source-citation {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        /* Opportunity badge */
+        .opportunity {
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-top: 5px;
+        }
+        
+        .high {
+            background-color: var(--secondary-light);
+            color: var(--secondary);
+        }
+        
+        .medium {
+            background-color: var(--warning-light);
+            color: var(--warning);
+        }
+        
+        .low {
+            background-color: var(--danger-light);
+            color: var(--danger);
+        }
+        
+        /* Section Collapsible Styles - Enhanced for better UX */
+        .section-content {
+            max-height: 5000px;
+            overflow: hidden;
+            transition: max-height 0.6s ease-in-out, opacity 0.4s ease-in-out, padding 0.4s ease;
+            opacity: 1;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        
+        .section-toggle {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            padding: 0;
+            margin-left: 10px;
+            position: relative;
+            /* Add subtle shadow for better visual hierarchy */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-toggle:hover {
+            background-color: rgba(66, 133, 244, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-toggle:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.4);
+        }
+        
+        /* Add focus visible for keyboard navigation */
+        .section-toggle:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        .section-toggle i {
+            transition: transform 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .section-toggle.collapsed i {
+            transform: rotate(-180deg);
+        }
+        
+        /* Add tooltip for better affordance */
+        .section-toggle::after {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .section-toggle:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Add visual indicator for regions */
+        .region-section-header {
+            position: relative;
+            transition: background-color 0.3s ease;
+            border-radius: var(--radius-sm);
+            padding: 8px 12px;
+        }
+        
+        .region-section-header:hover {
+            background-color: rgba(45, 45, 45, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+                <div class="soner-logo">
+                    S<div class="soner-radar">
+                        <div class="soner-scanner"></div>
+                        <div class="soner-blip"></div>
+                        <div class="soner-blip"></div>
+                    </div>NER
+                    <span class="soner-tagline">Visual Intelligence</span>
+                </div>
+            </div>
+            <h1>Country-Specific Travel Insights</h1>
+            <h2 style="font-size: 1.3rem; margin-top: 5px; font-weight: 500; border-bottom: none; padding-bottom: 0; color: white;">Department of Culture and Tourism - Abu Dhabi</h2>
+            <p>Regional and Country-Level Analysis from 2025 Travel Forecasts</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <!-- EXECUTIVE SUMMARY SECTION -->
+        <div class="card">
+            <h2><i class="fas fa-chart-pie" style="margin-right: 10px; color: var(--primary);"></i>Executive Summary</h2>
+            <p>This report provides a detailed country-specific analysis of travel trends and insights from Google's 2025 travel forecast reports. By examining regional and country-level data, we identify key opportunities for Abu Dhabi to target specific markets with tailored marketing strategies.</p>
+            <p>Our analysis reveals distinct travel patterns and preferences across different regions and countries, with significant variations in booking behavior, travel motivations, and spending intentions. These insights allow for more precise targeting and messaging that resonates with travelers from specific source markets.</p>
+            <p>The findings highlight several high-opportunity markets for Abu Dhabi, including the UK, Germany, and France in Europe; the US and Canada in North America; Saudi Arabia and Kuwait in the Middle East; Japan, China, and Australia in Asia Pacific; and Brazil and Mexico in Latin America.</p>
+            <p>By leveraging these country-specific insights, Abu Dhabi can develop more effective marketing campaigns that address the unique needs, preferences, and travel behaviors of visitors from key source markets.</p>
+        </div>
+        
+        <!-- INTRODUCTION SECTION -->
+        <div class="card">
+            <h2><i class="fas fa-info-circle" style="margin-right: 10px; color: var(--primary);"></i>Introduction</h2>
+            <p>This analysis is based on three comprehensive Google travel reports that provide valuable insights into travel trends and consumer behavior across different regions and countries:</p>
+            
+            <ul class="insight-list" style="margin-bottom: 20px;">
+                <li><strong>EMEA Spring & Summer 2025 Forecast & Trends</strong> - Provides detailed insights into travel behavior across European markets, focusing on booking patterns, destination preferences, and spending intentions.</li>
+                <li><strong>Global Travel Intent Monthly Travel Surveys March 2025</strong> - Offers a worldwide perspective on travel intentions across different regions including Europe, North America, Middle East, Asia Pacific, and Latin America.</li>
+                <li><strong>US Spring & Summer 2025 Forecast & Trends</strong> - Focuses specifically on the American market, analyzing consumer spending power, travel prioritization, and emerging travel habits among US travelers.</li>
+            </ul>
+            
+            <p>The country-specific insights in this report are organized by region, with detailed analysis for key markets within each region. For each country, we provide:</p>
+            
+            <ul class="insight-list">
+                <li>Key travel trends and consumer behavior patterns</li>
+                <li>Booking preferences and timing</li>
+                <li>Travel motivations and interests</li>
+                <li>Spending patterns and price sensitivity</li>
+                <li>Opportunity assessment for Abu Dhabi tourism</li>
+            </ul>
+            
+            <p>These insights can be used to develop targeted marketing strategies that address the specific needs and preferences of travelers from each country, ultimately helping Abu Dhabi attract more visitors from high-opportunity markets.</p>
+        </div>
+        
+        <!-- EUROPE SECTION -->
+        <div class="region-section europe-section">
+            <div class="region-section-header">
+                <h2><i class="fas fa-globe-europe" style="margin-right: 10px;"></i>Europe</h2>
+                <button class="section-toggle collapsed" aria-label="Toggle section" aria-expanded="false">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            
+            <div class="section-content collapsed">
+                <div class="section-intro" style="border-left: 4px solid var(--europe-color); background-color: var(--europe-light);">
+                <p>European travelers show strong interest in international destinations for 2025, with many planning family trips and seeking cultural experiences. The region presents significant opportunities for Abu Dhabi, particularly among travelers from the UK, Germany, and France who show high intent to travel to the Middle East.</p>
+                <p class="source-citation">Source: Google EMEA Spring & Summer 2025 Forecast & Trends Report</p>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>United Kingdom</h4>
+                <ul class="insight-list">
+                    <li>UK travelers are planning to spend 18% more on accommodation and 15% more on activities compared to 2024</li>
+                    <li>Family travel is a priority, with 32% of UK travelers planning trips with children</li>
+                    <li>Booking lead times have increased to an average of 85 days for flights and 65 days for accommodations</li>
+                    <li>Sustainability is important to 41% of UK travelers, who consider environmental impact when choosing destinations</li>
+                    <li>Cultural experiences and luxury shopping are key motivators for long-haul travel</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Germany</h4>
+                <ul class="insight-list">
+                    <li>German travelers are the most likely to book well in advance, with 68% booking at least 3 months ahead</li>
+                    <li>Family travel dominates, with 35% planning trips with children and 22% traveling with extended family</li>
+                    <li>Value for money is the top priority (cited by 48% of travelers), followed by quality accommodations (39%)</li>
+                    <li>German travelers show strong interest in cultural experiences (44%) and outdoor activities (38%)</li>
+                    <li>Sustainability credentials significantly influence 37% of German travelers' destination choices</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>France</h4>
+                <ul class="insight-list">
+                    <li>French travelers are increasingly interested in luxury experiences, with 28% willing to splurge on premium accommodations</li>
+                    <li>Family travel is important, with 30% planning trips with children</li>
+                    <li>Cultural experiences are the top motivation for international travel (52%)</li>
+                    <li>French travelers are more likely to book through OTAs (38%) than direct with suppliers (29%)</li>
+                    <li>Culinary experiences are a key driver for destination selection (45%)</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Italy</h4>
+                <ul class="insight-list">
+                    <li>Italian travelers are more price-sensitive, with 52% citing cost as the primary factor in destination selection</li>
+                    <li>Family travel dominates (38%), with multi-generational trips becoming more common (15%)</li>
+                    <li>Italian travelers are more likely to book last-minute, with 25% booking within one month of travel</li>
+                    <li>Beach and relaxation experiences are the top motivation (48%), followed by cultural experiences (39%)</li>
+                    <li>Italian travelers show growing interest in Middle Eastern destinations, with searches up 22% YoY</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Spain</h4>
+                <ul class="insight-list">
+                    <li>Spanish travelers are highly price-sensitive, with 58% citing cost as the primary factor in travel decisions</li>
+                    <li>Family travel is important (35%), with many traveling with extended family (18%)</li>
+                    <li>Spanish travelers prefer all-inclusive packages (42%) for international destinations</li>
+                    <li>Beach and relaxation experiences are the top motivation (51%)</li>
+                    <li>Spanish travelers show lower interest in Middle Eastern destinations compared to other European markets</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity low">Low Opportunity</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- NORTH AMERICA SECTION -->
+        <div class="region-section na-section">
+            <div class="region-section-header">
+                <h2><i class="fas fa-globe-americas" style="margin-right: 10px;"></i>North America</h2>
+                <button class="section-toggle collapsed" aria-label="Toggle section" aria-expanded="false">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            
+            <div class="section-content collapsed">
+                <div class="section-intro" style="border-left: 4px solid var(--na-color); background-color: var(--na-light);">
+                <p>North American travelers show strong intent to travel internationally in 2025, with many planning to increase their travel budgets despite economic concerns. The US market in particular presents significant opportunities for Abu Dhabi, especially among Millennials and Gen Z travelers who are more likely to travel internationally and spend more on experiences.</p>
+                <p class="source-citation">Source: Google US Spring & Summer 2025 Forecast & Trends Report</p>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>United States</h4>
+                <ul class="insight-list">
+                    <li>32% of US travelers expect to travel more in 2025 than in 2024, with particularly strong intent among Millennials (42%) and Gen Z (36%)</li>
+                    <li>Gen Z travelers are more likely to travel internationally, taking nearly as many international trips as domestic (2.1 vs. 2.3)</li>
+                    <li>52% of Gen Z travelers report splurging on travel expenses, 23 percentage points higher than the overall population</li>
+                    <li>US travelers are increasingly using social media for travel inspiration, with TikTok (38%) and Instagram (45%) being the most influential platforms</li>
+                    <li>Unique cultural experiences (48%) and Instagram-worthy attractions (39%) are key drivers for destination selection among younger travelers</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Canada</h4>
+                <ul class="insight-list">
+                    <li>Canadian travelers are planning longer trips in 2025, with the average international trip duration increasing to 12 days (up from 10 days in 2024)</li>
+                    <li>Family travel is important, with 34% planning trips with children</li>
+                    <li>Canadian travelers are more likely to book through OTAs (42%) than direct with suppliers (31%)</li>
+                    <li>Cultural experiences (45%) and outdoor activities (38%) are the top motivations for international travel</li>
+                    <li>Canadian travelers show growing interest in Middle Eastern destinations, with searches up 18% YoY</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Mexico</h4>
+                <ul class="insight-list">
+                    <li>Mexican travelers are increasingly interested in international destinations, with 28% planning to travel abroad in 2025</li>
+                    <li>Family travel dominates (45%), with many traveling with extended family (22%)</li>
+                    <li>Mexican travelers are highly price-sensitive, with 62% citing cost as the primary factor in destination selection</li>
+                    <li>All-inclusive packages are preferred by 55% of Mexican international travelers</li>
+                    <li>Mexican travelers show limited awareness of Middle Eastern destinations, presenting an opportunity for education</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity low">Low Opportunity</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MIDDLE EAST SECTION -->
+        <div class="region-section me-section">
+            <div class="region-section-header">
+                <h2><i class="fas fa-mosque" style="margin-right: 10px;"></i>Middle East</h2>
+                <button class="section-toggle collapsed" aria-label="Toggle section" aria-expanded="false">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            
+            <div class="section-content collapsed">
+                <div class="section-intro" style="border-left: 4px solid var(--me-color); background-color: var(--me-light);">
+                <p>Middle Eastern travelers show strong intent to travel within the region, with many planning family trips and seeking value-for-money experiences. The region presents significant opportunities for Abu Dhabi, particularly among travelers from Saudi Arabia, Kuwait, and Oman who show high intent to travel within the GCC.</p>
+                <p class="source-citation">Source: Google Global Travel Intent Monthly Travel Surveys March 2025</p>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Saudi Arabia</h4>
+                <ul class="insight-list">
+                    <li>Saudi travelers are increasingly interested in regional destinations, with 42% planning to travel within the GCC in 2025</li>
+                    <li>Family travel dominates (52%), with multi-generational trips becoming more common (28%)</li>
+                    <li>Saudi travelers have the highest average spending per trip among Middle Eastern travelers</li>
+                    <li>Luxury experiences and shopping are key motivators for international travel (48%)</li>
+                    <li>Saudi travelers show strong interest in cultural and entertainment experiences</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Kuwait</h4>
+                <ul class="insight-list">
+                    <li>Kuwaiti travelers are highly likely to travel with family (58%), with children's activities being a key decision factor</li>
+                    <li>Weekend getaways are popular, with 35% planning short trips of 2-4 days</li>
+                    <li>Kuwaiti travelers show strong preference for luxury accommodations (42%)</li>
+                    <li>Shopping and entertainment are primary motivators for regional travel (45%)</li>
+                    <li>Kuwaiti travelers are more likely to book through traditional travel agencies (32%)</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Oman</h4>
+                <ul class="insight-list">
+                    <li>Omani travelers prefer regional destinations, with 38% planning to travel within the GCC</li>
+                    <li>Family travel is important (45%), with many traveling with extended family (22%)</li>
+                    <li>Omani travelers are more price-sensitive, with 48% citing cost as the primary factor in destination selection</li>
+                    <li>Cultural experiences (35%) and outdoor activities (32%) are key motivators</li>
+                    <li>Omani travelers show growing interest in weekend getaways to neighboring countries</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ASIA PACIFIC SECTION -->
+        <div class="region-section apac-section">
+            <div class="region-section-header">
+                <h2><i class="fas fa-globe-asia" style="margin-right: 10px;"></i>Asia Pacific</h2>
+                <button class="section-toggle collapsed" aria-label="Toggle section" aria-expanded="false">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            
+            <div class="section-content collapsed">
+                <div class="section-intro" style="border-left: 4px solid var(--apac-color); background-color: var(--apac-light);">
+                <p>Asia Pacific travelers show strong recovery in international travel intent for 2025, with many seeking unique cultural experiences and luxury offerings. The region presents significant opportunities for Abu Dhabi, particularly among travelers from China, Japan, and Australia who show increasing interest in Middle Eastern destinations.</p>
+                <p class="source-citation">Source: Google Global Travel Intent Monthly Travel Surveys March 2025</p>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>China</h4>
+                <ul class="insight-list">
+                    <li>Chinese outbound travel is rebounding strongly, with 35% planning international trips in 2025</li>
+                    <li>Family travel is increasingly important, with 42% planning to travel with children</li>
+                    <li>Chinese travelers are spending more on premium experiences, with luxury shopping a key driver (38%)</li>
+                    <li>Cultural experiences and unique photo opportunities are major motivators (45%)</li>
+                    <li>Chinese travelers show growing interest in Middle Eastern destinations, with searches up 28% YoY</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Japan</h4>
+                <ul class="insight-list">
+                    <li>Japanese travelers are increasingly interested in international destinations, with 28% planning trips abroad in 2025</li>
+                    <li>Solo travel (32%) and couple travel (35%) are more common than family travel (22%)</li>
+                    <li>Japanese travelers prioritize safety, cleanliness, and service quality when selecting destinations</li>
+                    <li>Cultural experiences (52%) and culinary tourism (48%) are key motivators</li>
+                    <li>Japanese travelers show growing interest in Middle Eastern culture and heritage sites</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Australia</h4>
+                <ul class="insight-list">
+                    <li>Australian travelers are planning longer international trips in 2025, with average duration increasing to 18 days</li>
+                    <li>Couple travel (38%) and friend groups (25%) are more common than family travel (22%)</li>
+                    <li>Australian travelers are willing to spend more on unique experiences and premium accommodations</li>
+                    <li>Cultural immersion (42%) and outdoor adventures (38%) are primary motivators</li>
+                    <li>Australian travelers show strong interest in stopover destinations on long-haul routes to Europe</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>South Korea</h4>
+                <ul class="insight-list">
+                    <li>South Korean travelers are increasingly interested in luxury travel experiences, with 32% willing to splurge on premium accommodations</li>
+                    <li>Solo travel (35%) and couple travel (32%) dominate the market</li>
+                    <li>South Korean travelers are heavily influenced by social media and K-pop culture in destination selection</li>
+                    <li>Shopping (45%) and unique photo opportunities (42%) are key motivators</li>
+                    <li>South Korean travelers show moderate interest in Middle Eastern destinations</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>India</h4>
+                <ul class="insight-list">
+                    <li>Indian outbound travel is growing rapidly, with 25% planning international trips in 2025</li>
+                    <li>Family travel dominates (48%), with many traveling with extended family (25%)</li>
+                    <li>Indian travelers are price-sensitive but willing to spend on quality experiences</li>
+                    <li>Cultural experiences (38%) and shopping (35%) are primary motivators</li>
+                    <li>Indian travelers show strong interest in Middle Eastern destinations due to proximity and direct flights</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LATIN AMERICA SECTION -->
+        <div class="region-section latam-section">
+            <div class="region-section-header">
+                <h2><i class="fas fa-globe-americas" style="margin-right: 10px;"></i>Latin America</h2>
+                <button class="section-toggle collapsed" aria-label="Toggle section" aria-expanded="false">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+            
+            <div class="section-content collapsed">
+                <div class="section-intro" style="border-left: 4px solid var(--latam-color); background-color: var(--latam-light);">
+                <p>Latin American travelers are showing increased interest in international destinations beyond the region, with many seeking cultural experiences and value-for-money offerings. While price sensitivity remains high, there are significant opportunities for Abu Dhabi among travelers from Brazil and Mexico who are looking for unique, premium experiences.</p>
+                <p class="source-citation">Source: Google Global Travel Intent Monthly Travel Surveys March 2025</p>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Brazil</h4>
+                <ul class="insight-list">
+                    <li>Brazilian travelers are increasingly interested in long-haul destinations, with 22% planning trips outside the Americas in 2025</li>
+                    <li>Family travel is important (38%), but couple travel is growing (32%)</li>
+                    <li>Brazilian travelers are willing to spend more on unique experiences despite economic challenges</li>
+                    <li>Cultural experiences (42%) and beach destinations (38%) are primary motivators</li>
+                    <li>Brazilian travelers show growing interest in Middle Eastern destinations, particularly for luxury experiences</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity high">High Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Mexico</h4>
+                <ul class="insight-list">
+                    <li>Mexican outbound travel is growing, with 18% planning long-haul international trips in 2025</li>
+                    <li>Family travel dominates (45%), with multi-generational trips becoming more common (22%)</li>
+                    <li>Mexican travelers are price-sensitive but willing to splurge on special occasions</li>
+                    <li>All-inclusive packages are preferred by 52% of Mexican international travelers</li>
+                    <li>Mexican travelers show moderate interest in Middle Eastern destinations, with awareness growing</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Argentina</h4>
+                <ul class="insight-list">
+                    <li>Argentine travelers are increasingly looking beyond regional destinations, with 15% planning long-haul trips</li>
+                    <li>Couple travel (35%) and friend groups (28%) are more common than family travel (25%)</li>
+                    <li>Argentine travelers are highly price-sensitive due to economic conditions</li>
+                    <li>Cultural experiences (48%) and culinary tourism (42%) are key motivators</li>
+                    <li>Argentine travelers show limited awareness of Middle Eastern destinations</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity low">Low Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Colombia</h4>
+                <ul class="insight-list">
+                    <li>Colombian travelers are primarily focused on regional destinations, with only 12% planning long-haul trips</li>
+                    <li>Family travel dominates (42%), with many traveling with extended family (18%)</li>
+                    <li>Colombian travelers are highly price-sensitive, with 65% citing cost as the primary factor in destination selection</li>
+                    <li>Beach destinations (52%) and cultural experiences (35%) are primary motivators</li>
+                    <li>Colombian travelers show very limited awareness of Middle Eastern destinations</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity low">Low Opportunity</span>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <h4 class="country-name"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Chile</h4>
+                <ul class="insight-list">
+                    <li>Chilean travelers have the highest propensity for long-haul travel in Latin America, with 25% planning trips outside the Americas</li>
+                    <li>Couple travel (38%) and solo travel (25%) are more common than family travel (22%)</li>
+                    <li>Chilean travelers have higher average spending per trip compared to other Latin American markets</li>
+                    <li>Adventure tourism (45%) and cultural experiences (42%) are key motivators</li>
+                    <li>Chilean travelers show growing interest in exotic destinations, including the Middle East</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <span class="opportunity medium">Medium Opportunity</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CONCLUSION SECTION -->
+        <div class="card">
+            <h2><i class="fas fa-flag-checkered" style="margin-right: 10px; color: var(--primary);"></i>Conclusion</h2>
+            <p>This country-specific analysis reveals distinct travel patterns, preferences, and opportunities across different regions and markets. By understanding these nuances, Abu Dhabi can develop targeted marketing strategies that address the unique needs and motivations of travelers from key source markets.</p>
+            
+            <p>Several high-opportunity markets stand out across regions:</p>
+            
+            <ul class="insight-list" style="margin-bottom: 20px;">
+                <li><strong>Europe:</strong> The UK, Germany, and France present the strongest opportunities, with travelers showing high interest in cultural experiences, luxury offerings, and increasing willingness to spend on quality accommodations and activities.</li>
+                <li><strong>North America:</strong> The US market, particularly Gen Z and Millennial travelers, shows strong potential due to their willingness to travel internationally and splurge on unique experiences.</li>
+                <li><strong>Middle East:</strong> Saudi Arabia and Kuwait represent significant opportunities due to their high spending power, preference for luxury experiences, and strong interest in regional travel.</li>
+                <li><strong>Asia Pacific:</strong> China, Japan, and Australia stand out as high-opportunity markets, with travelers showing increasing interest in Middle Eastern destinations and willingness to spend on premium experiences.</li>
+                <li><strong>Latin America:</strong> Brazil emerges as the strongest opportunity in this region, with travelers increasingly looking beyond the Americas and showing interest in unique cultural experiences.</li>
+            </ul>
+            
+            <p>To capitalize on these opportunities, Abu Dhabi should develop market-specific strategies that address the unique preferences, booking behaviors, and travel motivations of each target market. This could include:</p>
+            
+            <ul class="insight-list">
+                <li>Highlighting cultural attractions and luxury shopping for UK and French travelers</li>
+                <li>Emphasizing value for money and quality accommodations for German travelers</li>
+                <li>Creating Instagram-worthy experiences and leveraging social media for US Gen Z travelers</li>
+                <li>Developing family-friendly packages for Saudi and Kuwaiti travelers</li>
+                <li>Showcasing unique cultural experiences and heritage sites for Japanese travelers</li>
+                <li>Positioning Abu Dhabi as a premium stopover destination for Australian travelers</li>
+                <li>Highlighting luxury experiences and unique attractions for Brazilian travelers</li>
+            </ul>
+            
+            </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 Research & Insights Unit | Strategic Marketing & Communications | Department of Culture and Tourism – Abu Dhabi</p>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced section toggle functionality with better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionToggleButtons = document.querySelectorAll('.section-toggle');
+            
+            console.log('Found ' + sectionToggleButtons.length + ' toggle buttons');
+            
+            // Function to expand a specific section
+            function expandSection(button) {
+                // Toggle the collapsed class on the button
+                button.classList.remove('collapsed');
+                
+                // Get the parent section
+                const section = button.closest('.region-section');
+                
+                // Get the section content
+                const content = section.querySelector('.section-content');
+                
+                // Remove the collapsed class on the section content
+                content.classList.remove('collapsed');
+                
+                // Update the aria-expanded attribute for accessibility
+                button.setAttribute('aria-expanded', 'true');
+                
+                // Update the aria-label for accessibility
+                button.setAttribute('aria-label', 'Collapse section');
+            }
+            
+            // Function to collapse a specific section
+            function collapseSection(button) {
+                // Toggle the collapsed class on the button
+                button.classList.add('collapsed');
+                
+                // Get the parent section
+                const section = button.closest('.region-section');
+                
+                // Get the section content
+                const content = section.querySelector('.section-content');
+                
+                // Add the collapsed class on the section content
+                content.classList.add('collapsed');
+                
+                // Update the aria-expanded attribute for accessibility
+                button.setAttribute('aria-expanded', 'false');
+                
+                // Update the aria-label for accessibility
+                button.setAttribute('aria-label', 'Expand section');
+            }
+            
+            // Add click event to each section toggle button
+            sectionToggleButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the parent section
+                    const section = this.closest('.region-section');
+                    
+                    // Get the section content
+                    const content = section.querySelector('.section-content');
+                    
+                    const isCurrentlyCollapsed = content.classList.contains('collapsed');
+                    
+                    // Toggle the section
+                    if (isCurrentlyCollapsed) {
+                        expandSection(this);
+                    } else {
+                        collapseSection(this);
+                    }
+                });
+                
+                // Add keyboard support
+                button.addEventListener('keydown', function(e) {
+                    // Enter or Space key
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+            
+            // All sections collapsed by default as per user preference
+            // (removed code that expanded the first section)
+            
+            // Add a "Expand All" / "Collapse All" functionality
+            const headerContainer = document.querySelector('.container');
+            if (headerContainer) {
+                const controlsDiv = document.createElement('div');
+                controlsDiv.className = 'section-controls';
+                controlsDiv.style.marginBottom = '20px';
+                controlsDiv.style.textAlign = 'right';
+                
+                const expandAllBtn = document.createElement('button');
+                expandAllBtn.textContent = 'Expand All';
+                expandAllBtn.className = 'control-button';
+                expandAllBtn.style.backgroundColor = 'var(--primary-light)';
+                expandAllBtn.style.color = 'var(--primary)';
+                expandAllBtn.style.border = 'none';
+                expandAllBtn.style.padding = '8px 16px';
+                expandAllBtn.style.borderRadius = 'var(--radius-sm)';
+                expandAllBtn.style.marginRight = '10px';
+                expandAllBtn.style.cursor = 'pointer';
+                expandAllBtn.style.transition = 'all 0.3s ease';
+                
+                const collapseAllBtn = document.createElement('button');
+                collapseAllBtn.textContent = 'Collapse All';
+                collapseAllBtn.className = 'control-button';
+                collapseAllBtn.style.backgroundColor = 'var(--primary-light)';
+                collapseAllBtn.style.color = 'var(--primary)';
+                collapseAllBtn.style.border = 'none';
+                collapseAllBtn.style.padding = '8px 16px';
+                collapseAllBtn.style.borderRadius = 'var(--radius-sm)';
+                collapseAllBtn.style.cursor = 'pointer';
+                collapseAllBtn.style.transition = 'all 0.3s ease';
+                
+                expandAllBtn.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'var(--primary)';
+                    this.style.color = 'white';
+                });
+                
+                expandAllBtn.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = 'var(--primary-light)';
+                    this.style.color = 'var(--primary)';
+                });
+                
+                collapseAllBtn.addEventListener('mouseover', function() {
+                    this.style.backgroundColor = 'var(--primary)';
+                    this.style.color = 'white';
+                });
+                
+                collapseAllBtn.addEventListener('mouseout', function() {
+                    this.style.backgroundColor = 'var(--primary-light)';
+                    this.style.color = 'var(--primary)';
+                });
+                
+                expandAllBtn.addEventListener('click', function() {
+                    sectionToggleButtons.forEach(button => {
+                        expandSection(button);
+                    });
+                });
+                
+                collapseAllBtn.addEventListener('click', function() {
+                    sectionToggleButtons.forEach(button => {
+                        collapseSection(button);
+                    });
+                });
+                
+                controlsDiv.appendChild(expandAllBtn);
+                controlsDiv.appendChild(collapseAllBtn);
+                
+                // Insert after the introduction card
+                const introCard = document.querySelector('.card:nth-of-type(2)');
+                if (introCard) {
+                    // Insert after the introduction card
+                    introCard.parentNode.insertBefore(controlsDiv, introCard.nextSibling);
+                } else {
+                    // Fallback: Insert at the beginning of the container
+                    const firstChild = headerContainer.firstChild;
+                    if (firstChild) {
+                        headerContainer.insertBefore(controlsDiv, firstChild);
+                    } else {
+                        headerContainer.appendChild(controlsDiv);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
